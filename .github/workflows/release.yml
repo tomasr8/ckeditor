@@ -7,16 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm install
       - name: Build
         run: npm run build
       - name: version
-        run: echo "::set-output name=version::v$(awk '/version/{gsub(/("|",)/,"",$2);print $2}' package.json)"
+        run: echo "::set-output name=version::v$(jq -r .version < package.json)"
         id: version
       - name: release
         uses: actions/create-release@v1
