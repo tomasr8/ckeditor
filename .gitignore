@@ -1,0 +1,9 @@
+# IDE
+.idea
+.vscode
+
+# NPM
+node_modules
+
+# Build
+build
