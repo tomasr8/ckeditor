@@ -34,6 +34,7 @@
     "@ckeditor/ckeditor5-table": "^34.0.0",
     "@ckeditor/ckeditor5-theme-lark": "^34.0.0",
     "@ckeditor/ckeditor5-typing": "^34.0.0",
+    "ckeditor5-insert-image": "file:ckeditor5-insert-image",
     "css-loader": "^5.2.7",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",

@@ -1,0 +1,74 @@
+{
+  "name": "@aeness/ckeditor5-insert-image",
+  "version": "29.0.0",
+  "description": "Image feature for CKEditor 5.",
+  "dependencies": {
+    "@ckeditor/ckeditor5-image": "^29.0.0",
+    "ckeditor5": "^29.0.0"
+  },
+  "devDependencies": {
+    "@ckeditor/ckeditor5-core": "^29.0.0",
+    "@ckeditor/ckeditor5-dev-utils": "^25.2.2",
+    "@ckeditor/ckeditor5-dev-webpack-plugin": "^25.2.2",
+    "@ckeditor/ckeditor5-editor-balloon": "^29.0.0",
+    "@ckeditor/ckeditor5-editor-classic": "^29.0.0",
+    "@ckeditor/ckeditor5-editor-inline": "^29.0.0",
+    "@ckeditor/ckeditor5-engine": "^29.0.0",
+    "@ckeditor/ckeditor5-essentials": "^29.0.0",
+    "@ckeditor/ckeditor5-image": "^29.0.0",
+    "@ckeditor/ckeditor5-link": "^29.0.0",
+    "@ckeditor/ckeditor5-paragraph": "^29.0.0",
+    "@ckeditor/ckeditor5-remove-format": "^29.0.0",
+    "@ckeditor/ckeditor5-theme-lark": "^29.0.0",
+    "@ckeditor/ckeditor5-ui": "^29.0.0",
+    "@ckeditor/ckeditor5-utils": "^29.0.0",
+    "eslint": "^7.26.0",
+    "postcss-loader": "^3.0.0",
+    "raw-loader": "^4.0.1",
+    "style-loader": "^1.2.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended": "^3.0.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.11"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=5.7.1"
+  },
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aeness/ckeditor5-insert-image.git"
+  },
+  "keywords": [
+    "ckeditor5"
+  ],
+  "files": [
+    "lang",
+    "src",
+    "theme",
+    "build"
+  ],
+  "scripts": {
+    "watch": "webpack --watch --mode development",
+    "build": "webpack --mode production",
+    "build-inline": "webpack --mode production --config=webpack-inline.config.js",
+    "build-balloon": "webpack --mode production --config=webpack-balloon.config.js",
+    "dll:build": "webpack --config=webpack-dll.config.js",
+    "lint": "eslint --quiet .",
+    "stylelint": "stylelint --quiet --allow-empty-input 'theme/**/*.css' 'docs/**/*.css'"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-recommended",
+    "rules": {
+      "at-rule-no-unknown": null,
+      "declaration-property-value-blacklist": {
+        "/.*/": [
+          "/#/",
+          "/rgb/"
+        ]
+      },
+      "color-named": "never"
+    }
+  }
+}

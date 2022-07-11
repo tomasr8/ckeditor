@@ -31,6 +31,7 @@ import Link from "@ckeditor/ckeditor5-link/src/link.js";
 import List from "@ckeditor/ckeditor5-list/src/list.js";
 import Markdown from "@ckeditor/ckeditor5-markdown-gfm/src/markdown.js";
 import MediaEmbed from "@ckeditor/ckeditor5-media-embed/src/mediaembed.js";
+import OnlyInsertImage from "ckeditor5-insert-image/src/onlyinsertimage.js";
 import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph.js";
 import PasteFromOffice from "@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js";
 import RemoveFormat from "@ckeditor/ckeditor5-remove-format/src/removeformat.js";
@@ -64,7 +65,8 @@ Editor.builtinPlugins = [
   HorizontalLine,
   Image,
   ImageCaption,
-  ImageInsert,
+  // ImageInsert,
+  // Disabled until https://github.com/ckeditor/ckeditor5/commit/6dead4a9ca5efc03f28cebbc6a0f62fc3c82f5ce
   ImageStyle,
   ImageToolbar,
   ImageUpload,
@@ -75,6 +77,7 @@ Editor.builtinPlugins = [
   List,
   Markdown,
   MediaEmbed,
+  OnlyInsertImage,
   Paragraph,
   PasteFromOffice,
   RemoveFormat,
@@ -111,7 +114,7 @@ Editor.defaultConfig = {
       "outdent",
       "indent",
       "|",
-      "imageInsert",
+      "onlyInsertImage",
       "insertTable",
       "|",
       "blockQuote",
