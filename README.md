@@ -6,7 +6,7 @@ This repository presents the Indico's CKEditor 5 custom editor build generated b
 
 Changes like changing toolbar items, changing order of icons or customizing plugin configurations should be relatively easy to make. Open the `sample/index.html` file and edit the script that initialized the CKEditor 5. Save the file and refresh the browser. That's all.
 
-*Note:* If you have any problems with browser caching use the `Ctrl + R` or `Cmd + R` shortcut depending on your system.
+_Note:_ If you have any problems with browser caching use the `Ctrl + R` or `Cmd + R` shortcut depending on your system.
 
 However if you want to remove or add a plugin to the build you need to follow the next step of this guide.
 
@@ -36,15 +36,22 @@ npm run build
 
 This will build the CKEditor 5 to the `build` directory. You can open your browser and you should be able to see the changes you've made in the code. If not, then try to refresh also the browser cache by typing `Ctrl + R` or `Cmd + R` depending on your system.
 
-## What's next?
+## Releasing a new build
 
-Follow the guides available on https://ckeditor.com/docs/ckeditor5/latest/framework/index.html and enjoy the document editing.
+1. Update the `master` branch with the desired changes and checkout into `release`:
 
-## FAQ
-| Where is the place to report bugs and feature requests?
+```shell
+git checkout release
+git rebase master
+```
 
-You can create an issue on https://github.com/ckeditor/ckeditor5/issues including the build id - `7qfh8u6uuivx-lzuwb5qobubk`. Make sure that the question / problem is unique, please look for a possibly asked questions in the search box. Duplicates will be closed.
+2. Create a new build, bump the version in `package.json` and commit the new changes:
 
-| Where can I learn more about the CKEditor 5 framework?
+```shell
+npm run build
+git add build/
+git commit -m "Release <version>" # Replace with new version
+git push origin release
+```
 
-Here: https://ckeditor.com/docs/ckeditor5/latest/framework/
+Afterwards the CI will take care of publishing a new tag and release.
