@@ -3,7 +3,7 @@ name: Build and release
 on: workflow_dispatch
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,6 +16,19 @@ jobs:
       - name: version
         run: echo "::set-output name=version::v$(jq -r .version < package.json)"
         id: version
+      - name: Initialize mandatory git config
+        run: |
+          git config user.name "Indico Team"
+          git config user.email indico-team@cern.ch
+      - name: Create a new release branch
+        run: git checkout -b release/v${{ steps.version.outputs.version }}
+      - name: Commit build files
+        id: make-commit
+        run: | 
+          git add build/
+          git commit --message "Release ${{ steps.version.outputs.version }}" 
+      - name: Push new branch
+        run: git push origin release/v${{ steps.version.outputs.version}}
       - name: release
         uses: actions/create-release@v1
         with:
@@ -23,5 +36,6 @@ jobs:
           prerelease: false
           release_name: ${{ steps.version.outputs.version }}
           tag_name: ${{ steps.version.outputs.version }}
+          commitish: release/v${{ steps.version.outputs.version}}
         env:
           GITHUB_TOKEN: ${{ github.token }}
