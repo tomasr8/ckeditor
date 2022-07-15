@@ -17,7 +17,7 @@ Note that it is also possible to go back to the [Online builder tool](https://ck
 In order to rebuild the application you need to install all dependencies first. To do it, open the terminal in the project directory and type:
 
 ```
-npm install
+npm ci
 ```
 
 Make sure that you have the `node` and `npm` installed first. If not, then follow the instructions on the [Node.js documentation page](https://nodejs.org/en/).
