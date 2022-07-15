@@ -41,6 +41,8 @@ import Subscript from "@ckeditor/ckeditor5-basic-styles/src/subscript";
 import Superscript from "@ckeditor/ckeditor5-basic-styles/src/superscript";
 import Table from "@ckeditor/ckeditor5-table/src/table.js";
 import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar.js";
+import TableProperties from "@ckeditor/ckeditor5-table/src/tableproperties";
+import TableCellProperties from "@ckeditor/ckeditor5-table/src/tablecellproperties";
 import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformation.js";
 import Underline from "@ckeditor/ckeditor5-basic-styles/src/underline.js";
 
@@ -87,6 +89,8 @@ Editor.builtinPlugins = [
   Superscript,
   Table,
   TableToolbar,
+  TableProperties,
+  TableCellProperties,
   TextTransformation,
   Underline,
 ];
@@ -139,7 +143,13 @@ Editor.defaultConfig = {
     ],
   },
   table: {
-    contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
+    contentToolbar: [
+      "tableColumn",
+      "tableRow",
+      "mergeTableCells",
+      "tableProperties",
+      "tableCellProperties",
+    ],
   },
 };
 
