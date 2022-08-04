@@ -21,6 +21,7 @@ import HorizontalLine from "@ckeditor/ckeditor5-horizontal-line/src/horizontalli
 import Image from "@ckeditor/ckeditor5-image/src/image.js";
 import ImageCaption from "@ckeditor/ckeditor5-image/src/imagecaption.js";
 import ImageInsert from "@ckeditor/ckeditor5-image/src/imageinsert.js";
+import ImageResize from "@ckeditor/ckeditor5-image/src/imageresize.js";
 import ImageStyle from "@ckeditor/ckeditor5-image/src/imagestyle.js";
 import ImageToolbar from "@ckeditor/ckeditor5-image/src/imagetoolbar.js";
 import ImageUpload from "@ckeditor/ckeditor5-image/src/imageupload.js";
@@ -69,6 +70,7 @@ Editor.builtinPlugins = [
   ImageCaption,
   // ImageInsert,
   // Disabled until https://github.com/ckeditor/ckeditor5/commit/6dead4a9ca5efc03f28cebbc6a0f62fc3c82f5ce
+  ImageResize,
   ImageStyle,
   ImageToolbar,
   ImageUpload,
