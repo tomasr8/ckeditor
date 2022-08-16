@@ -2,8 +2,8 @@
  * @license Copyright (c) 2014-2022, CKSource Holding sp. z o.o. All rights reserved.
  * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
  */
-import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment.js";
 import ClassicEditor from "@ckeditor/ckeditor5-editor-classic/src/classiceditor.js";
+import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment.js";
 import Autoformat from "@ckeditor/ckeditor5-autoformat/src/autoformat.js";
 import AutoImage from "@ckeditor/ckeditor5-image/src/autoimage.js";
 import AutoLink from "@ckeditor/ckeditor5-link/src/autolink.js";
@@ -21,7 +21,7 @@ import Heading from "@ckeditor/ckeditor5-heading/src/heading.js";
 import HorizontalLine from "@ckeditor/ckeditor5-horizontal-line/src/horizontalline.js";
 import Image from "@ckeditor/ckeditor5-image/src/image.js";
 import ImageCaption from "@ckeditor/ckeditor5-image/src/imagecaption.js";
-import ImageInsert from "@ckeditor/ckeditor5-image/src/imageinsert.js";
+import ImageInsertViaUrl from "@ckeditor/ckeditor5-image/src/imageinsertviaurl.js";
 import ImageResize from "@ckeditor/ckeditor5-image/src/imageresize.js";
 import ImageStyle from "@ckeditor/ckeditor5-image/src/imagestyle.js";
 import ImageToolbar from "@ckeditor/ckeditor5-image/src/imagetoolbar.js";
@@ -33,7 +33,6 @@ import Link from "@ckeditor/ckeditor5-link/src/link.js";
 import List from "@ckeditor/ckeditor5-list/src/list.js";
 import Markdown from "@ckeditor/ckeditor5-markdown-gfm/src/markdown.js";
 import MediaEmbed from "@ckeditor/ckeditor5-media-embed/src/mediaembed.js";
-import OnlyInsertImage from "ckeditor5-insert-image/src/onlyinsertimage.js";
 import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph.js";
 import PasteFromOffice from "@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js";
 import RemoveFormat from "@ckeditor/ckeditor5-remove-format/src/removeformat.js";
@@ -70,12 +69,14 @@ Editor.builtinPlugins = [
   HorizontalLine,
   Image,
   ImageCaption,
-  // ImageInsert,
-  // Disabled until https://github.com/ckeditor/ckeditor5/commit/6dead4a9ca5efc03f28cebbc6a0f62fc3c82f5ce
+  ImageInsertViaUrl,
   ImageResize,
   ImageStyle,
   ImageToolbar,
-  ImageUpload,
+  // ImageUpload,
+  // XXX: keep disabled until we support uploads, and when doing so make sure that we
+  // do not get the upload behavior except in cases where we want it (other places should
+  // still be insert-via-url only)
   Indent,
   IndentBlock,
   Italic,
@@ -83,7 +84,6 @@ Editor.builtinPlugins = [
   List,
   Markdown,
   MediaEmbed,
-  OnlyInsertImage,
   Paragraph,
   PasteFromOffice,
   RemoveFormat,
@@ -122,7 +122,7 @@ Editor.defaultConfig = {
       "outdent",
       "indent",
       "|",
-      "onlyInsertImage",
+      "imageInsert",
       "insertTable",
       "|",
       "blockQuote",
