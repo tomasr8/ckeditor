@@ -22,6 +22,7 @@ import HorizontalLine from "@ckeditor/ckeditor5-horizontal-line/src/horizontalli
 import Image from "@ckeditor/ckeditor5-image/src/image.js";
 import ImageCaption from "@ckeditor/ckeditor5-image/src/imagecaption.js";
 import ImageInsertViaUrl from "@ckeditor/ckeditor5-image/src/imageinsertviaurl.js";
+import ImageInsert from "@ckeditor/ckeditor5-image/src/imageinsert.js";
 import ImageResize from "@ckeditor/ckeditor5-image/src/imageresize.js";
 import ImageStyle from "@ckeditor/ckeditor5-image/src/imagestyle.js";
 import ImageToolbar from "@ckeditor/ckeditor5-image/src/imagetoolbar.js";
@@ -36,6 +37,7 @@ import MediaEmbed from "@ckeditor/ckeditor5-media-embed/src/mediaembed.js";
 import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph.js";
 import PasteFromOffice from "@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js";
 import RemoveFormat from "@ckeditor/ckeditor5-remove-format/src/removeformat.js";
+import SimpleUploadAdapter from "@ckeditor/ckeditor5-upload/src/adapters/simpleuploadadapter.js";
 import SourceEditing from "@ckeditor/ckeditor5-source-editing/src/sourceediting.js";
 import Strikethrough from "@ckeditor/ckeditor5-basic-styles/src/strikethrough.js";
 import Subscript from "@ckeditor/ckeditor5-basic-styles/src/subscript";
@@ -70,10 +72,11 @@ Editor.builtinPlugins = [
   Image,
   ImageCaption,
   ImageInsertViaUrl,
+  ImageInsert,
   ImageResize,
   ImageStyle,
   ImageToolbar,
-  // ImageUpload,
+  ImageUpload,
   // XXX: keep disabled until we support uploads, and when doing so make sure that we
   // do not get the upload behavior except in cases where we want it (other places should
   // still be insert-via-url only)
@@ -87,6 +90,7 @@ Editor.builtinPlugins = [
   Paragraph,
   PasteFromOffice,
   RemoveFormat,
+  SimpleUploadAdapter,
   SourceEditing,
   Strikethrough,
   Subscript,
