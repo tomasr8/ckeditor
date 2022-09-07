@@ -49,6 +49,8 @@ import TableCellProperties from "@ckeditor/ckeditor5-table/src/tablecellproperti
 import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformation.js";
 import Underline from "@ckeditor/ckeditor5-basic-styles/src/underline.js";
 
+import FullScreen from "./fullScreen.js";
+
 class Editor extends ClassicEditor {}
 
 // Plugins to include in the build.
@@ -66,6 +68,7 @@ Editor.builtinPlugins = [
   FindAndReplace,
   FontBackgroundColor,
   FontColor,
+  FullScreen,
   GeneralHtmlSupport,
   Heading,
   HorizontalLine,
@@ -137,6 +140,7 @@ Editor.defaultConfig = {
       "undo",
       "redo",
       "|",
+      "fullscreen",
       "sourceEditing",
     ],
     shouldNotGroupWhenFull: true,
