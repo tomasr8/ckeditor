@@ -1,0 +1,26 @@
+.ck-editor.ck-plugin-full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  /* Cover the whole viewport */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ck-editor.ck-plugin-full-screen .ck-editor__main {
+  /* Fill the rest of the height of the parent */
+  flex-grow: 1;
+  overflow-y: hidden;
+}
+
+/* Make source view also cover the whole viewport */
+.ck-editor.ck-plugin-full-screen .ck-source-editing-area {
+  height: 100%;
+}
+
+.ck-editor.ck-plugin-full-screen .ck-source-editing-area textarea {
+  overflow-y: scroll;
+}
