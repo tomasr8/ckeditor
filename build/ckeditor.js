@@ -47393,7 +47393,7 @@
               updateState() {
                 (this.fullScreen = !this.fullScreen),
                   this.button.set({ isOn: this.fullScreen }),
-                  editor.editing.view.focus();
+                  this.editor.editing.view.focus();
               }
               saveStyles(t) {
                 this.styles = {
