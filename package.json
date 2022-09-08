@@ -53,6 +53,7 @@
   },
   "scripts": {
     "build": "webpack --mode production",
+    "start": "webpack --watch --config webpack.dev.config.js",
     "prepare": "husky install"
   }
 }
