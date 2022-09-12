@@ -20,17 +20,21 @@ import GeneralHtmlSupport from "@ckeditor/ckeditor5-html-support/src/generalhtml
 import Heading from "@ckeditor/ckeditor5-heading/src/heading.js";
 import HorizontalLine from "@ckeditor/ckeditor5-horizontal-line/src/horizontalline.js";
 import Image from "@ckeditor/ckeditor5-image/src/image.js";
+import ImageBlockEditing from "@ckeditor/ckeditor5-image/src/image/imageblockediting.js";
 import ImageCaption from "@ckeditor/ckeditor5-image/src/imagecaption.js";
+import ImageEditing from "@ckeditor/ckeditor5-image/src/image/imageediting.js";
 import ImageInsertViaUrl from "@ckeditor/ckeditor5-image/src/imageinsertviaurl.js";
 import ImageInsert from "@ckeditor/ckeditor5-image/src/imageinsert.js";
 import ImageResize from "@ckeditor/ckeditor5-image/src/imageresize.js";
 import ImageStyle from "@ckeditor/ckeditor5-image/src/imagestyle.js";
 import ImageToolbar from "@ckeditor/ckeditor5-image/src/imagetoolbar.js";
 import ImageUpload from "@ckeditor/ckeditor5-image/src/imageupload.js";
+import ImageUtils from "@ckeditor/ckeditor5-image/src/imageutils.js";
 import Indent from "@ckeditor/ckeditor5-indent/src/indent.js";
 import IndentBlock from "@ckeditor/ckeditor5-indent/src/indentblock.js";
 import Italic from "@ckeditor/ckeditor5-basic-styles/src/italic.js";
 import Link from "@ckeditor/ckeditor5-link/src/link.js";
+import LinkImage from "@ckeditor/ckeditor5-link/src/linkimage.js";
 import List from "@ckeditor/ckeditor5-list/src/list.js";
 import Markdown from "@ckeditor/ckeditor5-markdown-gfm/src/markdown.js";
 import MediaEmbed from "@ckeditor/ckeditor5-media-embed/src/mediaembed.js";
@@ -70,20 +74,21 @@ Editor.builtinPlugins = [
   Heading,
   HorizontalLine,
   Image,
+  ImageBlockEditing,
   ImageCaption,
+  ImageEditing,
   ImageInsertViaUrl,
   ImageInsert,
   ImageResize,
   ImageStyle,
   ImageToolbar,
   ImageUpload,
-  // XXX: keep disabled until we support uploads, and when doing so make sure that we
-  // do not get the upload behavior except in cases where we want it (other places should
-  // still be insert-via-url only)
+  ImageUtils,
   Indent,
   IndentBlock,
   Italic,
   Link,
+  LinkImage,
   List,
   Markdown,
   MediaEmbed,
@@ -148,6 +153,10 @@ Editor.defaultConfig = {
       "imageStyle:inline",
       "imageStyle:block",
       "imageStyle:side",
+      "imageStyle:alignLeft",
+      "imageStyle:alignRight",
+      "|",
+      "linkImage",
     ],
   },
   table: {
