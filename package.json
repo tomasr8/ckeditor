@@ -52,6 +52,7 @@
     "*.{js,css,md}": "prettier --write"
   },
   "scripts": {
+    "watch": "webpack --mode development --watch",
     "build": "webpack --mode production",
     "prepare": "husky install"
   }
