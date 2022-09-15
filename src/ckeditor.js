@@ -16,6 +16,7 @@ import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials.js";
 import FindAndReplace from "@ckeditor/ckeditor5-find-and-replace/src/findandreplace.js";
 import FontBackgroundColor from "@ckeditor/ckeditor5-font/src/fontbackgroundcolor.js";
 import FontColor from "@ckeditor/ckeditor5-font/src/fontcolor.js";
+import FullScreen from "ckeditor5-full-screen/src/fullscreen.js";
 import GeneralHtmlSupport from "@ckeditor/ckeditor5-html-support/src/generalhtmlsupport.js";
 import Heading from "@ckeditor/ckeditor5-heading/src/heading.js";
 import HorizontalLine from "@ckeditor/ckeditor5-horizontal-line/src/horizontalline.js";
@@ -70,6 +71,7 @@ Editor.builtinPlugins = [
   FindAndReplace,
   FontBackgroundColor,
   FontColor,
+  FullScreen,
   GeneralHtmlSupport,
   Heading,
   HorizontalLine,
@@ -141,6 +143,8 @@ Editor.defaultConfig = {
       "findAndReplace",
       "undo",
       "redo",
+      "|",
+      "fullscreen",
       "|",
       "sourceEditing",
     ],
